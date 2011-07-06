@@ -1,6 +1,6 @@
 # coding: UTF-8
 
-module Resque::AsyncDeliver
+module Resque::Plugins::AsyncDeliver
   class MailJob
     @queue = :mail
 

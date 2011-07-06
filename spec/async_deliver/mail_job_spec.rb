@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe Resque::AsyncDeliver::MailJob do
+describe Resque::Plugins::AsyncDeliver::MailJob do
   describe '.perform' do
     let(:user)     { TestUser.instance }
     let(:resource) { TestResource.instance }
@@ -22,7 +22,7 @@ describe Resque::AsyncDeliver::MailJob do
     end
 
     it 'should instantiate a mail and deliver it' do
-      Resque::AsyncDeliver::MailJob.perform(
+      Resque::Plugins::AsyncDeliver::MailJob.perform(
         'TestMailer',
         :test_message,
         { :async_deliver_class => 'TestUser',

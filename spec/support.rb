@@ -19,6 +19,6 @@ class TestResource < ActiveRecord::Base
 end
 
 class TestMailer < ActionMailer::Base
-  extend Resque::AsyncDeliver::ActionMailerExtension
+  extend Resque::Plugins::AsyncDeliver::ActionMailerExtension
   def test_message; end
 end

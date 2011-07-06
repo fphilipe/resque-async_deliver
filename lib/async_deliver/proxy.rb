@@ -1,6 +1,6 @@
 # coding: UTF-8
 
-module Resque::AsyncDeliver
+module Resque::Plugins::AsyncDeliver
   class Proxy
     def initialize(klass)
       @klass = klass.name

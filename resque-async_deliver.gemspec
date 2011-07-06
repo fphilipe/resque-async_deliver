@@ -5,7 +5,7 @@ require "async_deliver/version"
 
 Gem::Specification.new do |s|
   s.name        = "resque-async_deliver"
-  s.version     = Resque::AsyncDeliver::VERSION
+  s.version     = Resque::Plugins::AsyncDeliver::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Philipe Fatio"]
   s.email       = ["philipe.fatio@gmail.com"]

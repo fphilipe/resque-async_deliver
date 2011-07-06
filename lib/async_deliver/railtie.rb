@@ -2,11 +2,11 @@
 
 require 'rails'
 
-module Resque::AsyncDeliver
+module Resque::Plugins::AsyncDeliver
   class Railtie < Rails::Railtie
     initializer :after_initialize do
       ActiveSupport.on_load(:action_mailer) do
-        Resque::AsyncDeliver.initialize
+        Resque::Plugins::AsyncDeliver.initialize
       end
     end
   end

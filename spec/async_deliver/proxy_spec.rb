@@ -2,15 +2,15 @@
 
 require 'spec_helper'
 
-describe Resque::AsyncDeliver::Proxy do
+describe Resque::Plugins::AsyncDeliver::Proxy do
   describe '#method_missing' do
-    let(:proxy)    { Resque::AsyncDeliver::Proxy.new(TestMailer) }
+    let(:proxy)    { Resque::Plugins::AsyncDeliver::Proxy.new(TestMailer) }
     let(:user)     { TestUser.instance }
     let(:resource) { TestResource.instance }
 
     before do
       Resque.expects(:enqueue).with(
-        Resque::AsyncDeliver::MailJob,
+        Resque::Plugins::AsyncDeliver::MailJob,
         'TestMailer',
         :test_message,
         { :async_deliver_class => 'TestUser',

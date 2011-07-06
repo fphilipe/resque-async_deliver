@@ -2,7 +2,7 @@
 
 require 'action_mailer'
 
-module Resque::AsyncDeliver
+module Resque::Plugins::AsyncDeliver
   module ActionMailerExtension
     def async_deliver
       Proxy.new(self)
