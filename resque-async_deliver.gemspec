@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Philipe Fatio"]
   s.email       = ["philipe.fatio@gmail.com"]
-  s.homepage    = "https://github.com/fphilipe/resque-deliver_asynchronously"
+  s.homepage    = "https://github.com/fphilipe/resque-async_deliver"
   s.summary     = %q{Deliver mails asynchronously using Resque without explicitly creating a performable job.}
   s.description = <<-description
 This gem makes it possible to send mails asynchronously using Resque by
