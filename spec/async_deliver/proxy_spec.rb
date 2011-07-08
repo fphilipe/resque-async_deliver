@@ -5,34 +5,35 @@ require 'spec_helper'
 describe Resque::Plugins::AsyncDeliver::Proxy do
   describe '#method_missing' do
     let(:proxy)    { Resque::Plugins::AsyncDeliver::Proxy.new(TestMailer) }
-    let(:user)     { TestUser.instance }
-    let(:resource) { TestResource.instance }
 
-    before do
-      Resque.expects(:enqueue).with(
-        Resque::Plugins::AsyncDeliver::MailJob,
-        'TestMailer',
-        :test_message,
-        { :async_deliver_class => 'TestUser',
-          :async_deliver_id    => user.id },
-          123,
-          "a string",
-          %q[ an array ],
-          { :a => 'hash' },
-          { :async_deliver_class => 'TestResource',
-            :async_deliver_id    => resource.id }
-      )
+    context 'when Resque.inline? == false' do
+      before do
+        Resque.expects(:enqueue).with(
+          Resque::Plugins::AsyncDeliver::MailJob,
+          'TestMailer',
+          :test_message,
+          *serialized_arguments
+        )
+      end
+
+      it 'should enqueue a MailJob in Resque' do
+        proxy.test_message(*arguments)
+      end
     end
 
-    it 'should enqueue a MailJob in Resque' do
-      proxy.test_message(
-        user,
-        123,
-        "a string",
-        %q[ an array ],
-        { :a => 'hash' },
-        resource
-      )
+    context 'when Resque.inline? == true' do
+      before do
+        Resque.inline = true
+        Resque.expects(:enqueue).never
+
+        message = mock()
+        message.expects(:deliver)
+        TestMailer.expects(:test_message).with(*arguments).returns(message)
+      end
+
+      it 'should deliver the mail instantly' do
+        proxy.test_message(*arguments)
+      end
     end
   end
 end
