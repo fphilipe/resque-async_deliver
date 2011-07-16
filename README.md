@@ -39,6 +39,8 @@ serialized as a hash containing the class and the id of the model.
 resque-async\_deliver will then `find` the records and pass them to the
 mailer.
 
+The jobs will be added to Resque in the `mail` queue.
+
 ## Details
 
 Tested on ruby 1.8.7 and 1.9.2.
