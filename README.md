@@ -1,5 +1,10 @@
 # resque-async\_deliver
 
+[![Build Status](https://travis-ci.org/fphilipe/resque-async_deliver.png)](https://travis-ci.org/fphilipe/resque-async_deliver)
+[![Gem Version](https://badge.fury.io/rb/resque-async_deliver.png)](http://badge.fury.io/rb/resque-async_deliver)
+[![Dependency Status](https://gemnasium.com/fphilipe/resque-async_deliver.png)](https://gemnasium.com/fphilipe/resque-async_deliver)
+[![Code Climate](https://codeclimate.com/github/fphilipe/resque-async_deliver.png)](https://codeclimate.com/github/fphilipe/resque-async_deliver)
+
 resque-async\_deliver is a simple gem to send emails asynchronously
 using [Resque](https://github.com/defunkt/resque) without having to
 change much in your existing codebase.

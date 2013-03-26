@@ -25,8 +25,8 @@ transformed back to records by the mailer job and passed along to the mailer.
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency 'resque'      , '~> 1.0'
-  s.add_dependency 'actionmailer', '~> 3.0'
+  # s.add_dependency 'resque'      , '~> 2.0'
+  s.add_dependency 'actionmailer', '>= 3.0'
 
   s.add_development_dependency 'rspec-core'
   s.add_development_dependency 'rspec-expectations'
