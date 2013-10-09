@@ -57,3 +57,7 @@ Tested on ruby 1.8.7 and 1.9.2.
 Philipe Fatio  
 <philipe.fatio@gmail.com>  
 [@fphilipe](http://twitter.com/fphilipe)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fphilipe/resque-async_deliver/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
