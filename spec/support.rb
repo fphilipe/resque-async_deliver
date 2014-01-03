@@ -20,31 +20,3 @@ class TestMailer < ActionMailer::Base
   extend Resque::Plugins::AsyncDeliver::ActionMailerExtension
   def test_message; end
 end
-
-def arguments
-  [
-    TestUser.instance,
-    123,
-    "a string",
-    %q[ an array ],
-    { :a => 'hash' },
-    TestResource.instance
-  ]
-end
-
-def serialized_arguments
-  [
-    {
-      'async_deliver_class' => 'TestUser',
-      'async_deliver_id'    => TestUser.instance.id
-    },
-    123,
-    "a string",
-    %q[ an array ],
-    { :a => 'hash' },
-    {
-      'async_deliver_class' => 'TestResource',
-      'async_deliver_id'    => TestResource.instance.id
-    }
-  ]
-end
