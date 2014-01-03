@@ -1,5 +1,5 @@
 require 'resque'
-require 'resque-async_deliver'
+require 'resque/async_deliver'
 require 'action_mailer'
 require 'singleton'
 
@@ -36,13 +36,17 @@ end
 
 def serialized_arguments
   [
-    { :async_deliver_class => 'TestUser',
-      :async_deliver_id    => TestUser.instance.id },
+    {
+      'async_deliver_class' => 'TestUser',
+      'async_deliver_id'    => TestUser.instance.id
+    },
     123,
     "a string",
     %q[ an array ],
     { :a => 'hash' },
-    { :async_deliver_class => 'TestResource',
-      :async_deliver_id    => TestResource.instance.id }
+    {
+      'async_deliver_class' => 'TestResource',
+      'async_deliver_id'    => TestResource.instance.id
+    }
   ]
 end

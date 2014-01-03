@@ -4,19 +4,17 @@ require 'spec_helper'
 
 describe Resque::Plugins::AsyncDeliver::Proxy do
   describe '#method_missing' do
-    let(:proxy)    { Resque::Plugins::AsyncDeliver::Proxy.new(TestMailer) }
+    let(:proxy) { Resque::Plugins::AsyncDeliver::Proxy.new(TestMailer) }
 
     context 'when Resque.inline? == false' do
-      before do
+      it 'should enqueue a MailJob in Resque' do
         Resque.expects(:enqueue).with(
           Resque::Plugins::AsyncDeliver::MailJob,
           'TestMailer',
-          :test_message,
+          'test_message',
           *serialized_arguments
         )
-      end
 
-      it 'should enqueue a MailJob in Resque' do
         proxy.test_message(*arguments)
       end
     end

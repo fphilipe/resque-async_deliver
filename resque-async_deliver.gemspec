@@ -1,7 +1,7 @@
 # coding: UTF-8
 
 $:.push File.expand_path("../lib", __FILE__)
-require "async_deliver/version"
+require "resque/plugins/async_deliver/version"
 
 Gem::Specification.new do |s|
   s.name        = "resque-async_deliver"
