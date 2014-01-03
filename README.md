@@ -4,7 +4,6 @@
 [![Gem Version][gem-image]][gem-link]
 [![Dependency Status][deps-image]][deps-link]
 [![Code Climate][gpa-image]][gpa-link]
-[![Coverage Status][cov-image]][cov-link]
 [![Bitdeli Badge][stats-image]][stats-link]
 
 resque-async\_deliver is a simple gem to send emails asynchronously
