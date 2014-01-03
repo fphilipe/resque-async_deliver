@@ -3,18 +3,16 @@ require 'resque/async_deliver'
 require 'action_mailer'
 require 'singleton'
 
-module ActiveRecord
-  class Base
-    include Singleton
-    def self.find(id); instance; end
-  end
+class Model
+  include Singleton
+  def self.find(id); instance; end
 end
 
-class TestUser < ActiveRecord::Base
+class TestUser < Model
   def id; 123; end
 end
 
-class TestResource < ActiveRecord::Base
+class TestResource < Model
   def id; 456; end
 end
 

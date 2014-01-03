@@ -28,7 +28,5 @@ transformed back to records by the mailer job and passed along to the mailer.
   s.add_dependency 'resque'      , '~> 1.0'
   s.add_dependency 'actionmailer', '~> 3.0'
 
-  s.add_development_dependency 'rspec-core'
-  s.add_development_dependency 'rspec-expectations'
-  s.add_development_dependency 'mocha'
+  s.add_development_dependency 'rspec', '>= 3.0.0.beta1'
 end
