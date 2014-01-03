@@ -1,5 +1,12 @@
 # resque-async\_deliver
 
+[![Build Status][build-image]][build-link]
+[![Gem Version][gem-image]][gem-link]
+[![Dependency Status][deps-image]][deps-link]
+[![Code Climate][gpa-image]][gpa-link]
+[![Coverage Status][cov-image]][cov-link]
+[![Bitdeli Badge][stats-image]][stats-link]
+
 resque-async\_deliver is a simple gem to send emails asynchronously
 using [Resque](https://github.com/defunkt/resque) without having to
 change much in your existing codebase.
@@ -58,6 +65,13 @@ Philipe Fatio
 <philipe.fatio@gmail.com>  
 [@fphilipe](http://twitter.com/fphilipe)
 
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fphilipe/resque-async_deliver/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
+[build-image]: https://travis-ci.org/fphilipe/resque-async_deliver.png
+[build-link]:  https://travis-ci.org/fphilipe/resque-async_deliver
+[gem-image]:   https://badge.fury.io/rb/resque-async_deliver.png
+[gem-link]:    https://rubygems.org/gems/resque-async_deliver
+[deps-image]:  https://gemnasium.com/fphilipe/resque-async_deliver.png
+[deps-link]:   https://gemnasium.com/fphilipe/resque-async_deliver
+[gpa-image]:   https://codeclimate.com/github/fphilipe/resque-async_deliver.png
+[gpa-link]:    https://codeclimate.com/github/fphilipe/resque-async_deliver
+[stats-image]: https://d2weczhvl823v0.cloudfront.net/fphilipe/resque-async_deliver/trend.png
+[stats-link]:  https://bitdeli.com/
