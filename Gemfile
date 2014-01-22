@@ -4,5 +4,5 @@ gemspec
 
 platforms :rbx do
   gem 'rubysl'
-  gem 'rubysl-json'
+  gem 'json'
 end
